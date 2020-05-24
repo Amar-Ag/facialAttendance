@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<!-- BEGIN HEAD -->
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta name="description" content="Responsive Admin Template"/>
+    <meta name="author" content="SmartUniversity"/>
+    <title>Smart University</title>
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css"/>
+    <!-- icons -->
+    <link href="{% static 'admin_css/fonts/simple-line-icons/simple-line-icons.min.css'%}" rel="stylesheet"
+          type="text/css"/>
+    <link href="{% static 'admin_css/fonts/font-awesome/css/font-awesome.min.css'%}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'admin_css/fonts/material-design-icons/material-icon.css'%}" rel="stylesheet"
+          type="text/css"/>
+    <!--bootstrap -->
+    <link href="{% static 'admin_css/plugins/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'admin_css/plugins/summernote/summernote.css'%}" rel="stylesheet">
+    <!-- Material Design Lite CSS -->
+    <link href="{% static 'admin_css/plugins/material/material.min.css'%}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'admin_css/css/material_style.css'%}" rel="stylesheet" type="text/css"/>
+    <!-- inbox style -->
+    <link href="{% static 'admin_css/css/inbox.min.css'%}" rel="stylesheet" type="text/css"/>
+    <!-- Theme Styles -->
+    <link href="{% static 'admin_css/css/main_style.css'%}" rel="stylesheet" id="rt_style_components"
+          type="text/css"/>
+    <link href="{% static 'admin_css/css/plugins.min.css'%}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'admin_css/css/style.css'%}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'admin_css/css/responsive.css'%}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'admin_css/css/color.css' %}" rel="stylesheet" type="text/css"/>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico'%}"/>
+</head>
+<!-- END HEAD -->
+
+<body
+        class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md sidemenu-closed header-white white-sidebar-color logo-indigo">
+<div class="page-wrapper">
+    <!-- start header -->
+    <div class="page-header navbar navbar-fixed-top">
+        <div class="page-header-inner ">
+            <!-- logo start -->
+            <div class="page-logo">
+                <a href="{% url 'dashboard'%}">
+                    <span class="logo-icon material-icons fa-rotate-45">school</span>
+                    <span class="logo-default">Smart</span> </a>
+            </div>
+            <!-- logo end -->
+            <ul class="nav navbar-nav navbar-left in">
+                <li><a href="#" class="menu-toggler sidebar-toggler"><i class="icon-menu"></i></a></li>
+            </ul>
+            <form class="search-form-opened" action="#" method="GET">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search..." name="query">
+                    <span class="input-group-btn">
+							<a href="javascript:;" class="btn submit">
+								<i class="icon-magnifier"></i>
+							</a>
+						</span>
+                </div>
+            </form>
+            <!-- start mobile menu -->
+            <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse"
+               data-target=".navbar-collapse">
+                <span></span>
+            </a>
+            <!-- end mobile menu -->
+            <!-- start header menu -->
+            <div class="top-menu">
+                <ul class="nav navbar-nav pull-right">
+                    <!-- start manage user dropdown -->
+                    <li class="dropdown dropdown-user">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                           data-close-others="true">
+                            <img alt="" class="img-circle " src="{% static 'admin_css/img/dp.jpg'%}"/>
+                            <span class="username username-hide-on-mobile"> Kiran </span>
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-default">
+                            <li>
+                                <a href="user_profile.html">
+                                    <i class="icon-user"></i> Profile </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="login.html">
+                                    <i class="icon-logout"></i> Log Out </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- end manage user dropdown -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- end header -->
+    <!-- start page container -->
+    <div class="page-container">
+        <!-- start sidebar menu -->
+        <div class="sidebar-container">
+            <div class="sidemenu-container navbar-collapse collapse fixed-menu">
+                <div id="remove-scroll" class="left-sidemenu">
+                    <ul class="sidemenu  page-header-fixed sidemenu-closed" data-keep-expanded="false"
+                        data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
+                        <li class="sidebar-toggler-wrapper hide">
+                            <div class="sidebar-toggler">
+                                <span></span>
+                            </div>
+                        </li>
+                        <li class="sidebar-user-panel">
+                            <div class="user-panel">
+                                <div class="pull-left image">
+                                    <img src="{% static 'admin_css/img/dp.jpg' %}" class="img-circle user-img-circle"
+                                         alt="User Image"/>
+                                </div>
+                                <div class="pull-left info">
+                                    <p> Kiran Patel</p>
+                                    <a href="#"><i class="fa fa-circle user-online"></i><span class="txtOnline">
+												Online</span></a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item start">
+                            <a href="{% url 'dashboard'%}" class="nav-link nav-toggle">
+                                <i class="material-icons">dashboard</i>
+                                <span class="title">Dashboard</span>
+                                <span class="arrow"></span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item  active open">
+                            <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
+                                <span class="title">Students</span><span class="arrow"></span></a>
+                            <ul class="sub-menu">
+                                <li class="nav-item">
+                                    <a href="{% url 'allStudent'%}" class="nav-link "> <span class="title">All
+												Students</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'add_student_view'%}" class="nav-link "> <span class="title">Add
+												Student</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link "> <span class="title">Edit
+												Student</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:;" class="nav-link nav-toggle"> <i
+                                    class="material-icons">description</i>
+                                <span class="title">Quick Links</span>
+                                <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item"><a href="{% url 'profile'%}" class="nav-link "><span
+                                        class="title">Profile</span>
+                                </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="login.html" class="nav-link "> <span class="title">Logout</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- end sidebar menu -->
+        <!-- start page content -->
+        <div class="page-content-wrapper">
+            <div class="page-content">
+                <div class="page-bar">
+                    <div class="page-title-breadcrumb">
+                        <div class=" pull-left">
+                            <div class="page-title">Edit Student</div>
+                        </div>
+                        <ol class="breadcrumb page-breadcrumb pull-right">
+                            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
+                                                                   href="{% url 'dashboard'%}">Home</a>&nbsp;<i
+                                    class="fa fa-angle-right"></i>
+                            </li>
+                            <li><a class="parent-item" href="">Student</a>&nbsp;<i class="fa fa-angle-right"></i>
+                            </li>
+                            <li class="active">Edit Student</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card-box">
+                            <div class="card-head">
+                                <header>Basic Information</header>
+                                <button id="panel-button"
+                                        class="mdl-button mdl-js-button mdl-button--icon pull-right"
+                                        data-upgraded=",MaterialButton">
+                                    <i class="material-icons">more_vert</i>
+                                </button>
+                                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                                    data-mdl-for="panel-button">
+                                    <li class="mdl-menu__item"><i class="material-icons">assistant_photo</i>Action
+                                    </li>
+                                    <li class="mdl-menu__item"><i class="material-icons">print</i>Another action
+                                    </li>
+                                    <li class="mdl-menu__item"><i class="material-icons">favorite</i>Something else
+                                        here
+                                    </li>
+                                </ul>
+                            </div>
+                            <form action="{% url 'editStudent' student.RollNo %}" method="post">{% csrf_token %}
+                                <div class="card-body row">
+                                    <div class="col-lg-6 p-t-20">
+                                        <div
+                                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                            <input class="mdl-textfield__input" type="text"
+                                                   value="{{student.FirstName}}"
+                                                   id="txtFirstName" name="FirstName">
+                                            <label class="mdl-textfield__label">First Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 p-t-20">
+                                        <div
+                                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                            <input class="mdl-textfield__input" type="text" value="{{student.LastName}}"
+                                                   id="txtLasttName" name="LastName">
+                                            <label class="mdl-textfield__label">Last Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 p-t-20">
+                                        <div
+                                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                            <input class="mdl-textfield__input" type="text" value="{{student.RollNo}}"
+                                                   id="txtRollNo" name="RollNo" readonly>
+                                            <label class="mdl-textfield__label">Roll No</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 p-t-20">
+                                        <div
+                                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                            <input class="mdl-textfield__input" type="email" value="{{student.Email}}"
+                                                   id="txtemail" name="Email">
+                                            <label class="mdl-textfield__label">Email</label>
+                                            <span class="mdl-textfield__error">Enter Valid Email Address!</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 p-t-20">
+                                        <div
+                                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                            <input class="mdl-textfield__input" type="text"
+                                                   value="{{student.RegistrationDate}}"
+                                                   id="date" name="RegisterDate">
+                                            <label class="mdl-textfield__label">Registration Date</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 p-t-20">
+                                        <div
+                                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
+                                            <!--											<input class="mdl-textfield__input" type="text" id="list2" value="{{student.Class}}"-->
+                                            <!--												readonly tabIndex="-1" name="Class">-->
+                                            <!--											<label for="list2" class="pull-right margin-0">-->
+                                            <!--												<i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>-->
+                                            <!--											</label>-->
+                                            <!--											<label for="list2" class="mdl-textfield__label">Class</label>-->
+                                            <!--											<ul data-mdl-for="list2" class="mdl-menu mdl-menu&#45;&#45;bottom-left mdl-js-menu">-->
+                                            <!--												<li class="mdl-menu__item" data-val="DE">Computer</li>-->
+                                            <!--												<li class="mdl-menu__item" data-val="BY">Mechanical</li>-->
+                                            <!--												<li class="mdl-menu__item" data-val="BY">Mathematics</li>-->
+                                            <!--												<li class="mdl-menu__item" data-val="BY">Commerce</li>-->
+                                            <!--											</ul>-->
+                                            <label for="list2" class="mdl-textfield__label">Class</label>
+                                            <select class="mdl-textfield__input" id="list2" name="Class">
+                                                {% if student.Class == 'BIT' %}
+                                                <option value="BIT" class="mdl-menu_item" selected="selected">BIT
+                                                </option>
+
+                                                <option value="BHM" class="mdl-menu_item">BHM</option>
+                                                <option value="BBA" class="mdl-menu_item">BBA</option>
+                                                {% elif student.Class == 'BHM' %}
+                                                <option value="BHM" class="mdl-menu_item" selected="selected">BHM
+                                                </option>
+                                                <option value="BIT" class="mdl-menu_item">BIT</option>
+                                                <option value="BBA" class="mdl-menu_item">BBA</option>
+                                                {% elif student.Class == 'BBA' %}
+                                                <option value="BBA" class="mdl-menu_item" selected="selected">BBA
+                                                </option>
+                                                <option value="BIT" class="mdl-menu_item">BIT</option>
+                                                <option value="BHM" class="mdl-menu_item">BHM</option>
+
+                                                {% endif %}
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 p-t-20">
+                                        <div
+                                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
+                                            <!--											<input class="mdl-textfield__input" type="text" id="sample2" value="{{student.Gender}}" name="Gender"-->
+                                            <!--												readonly tabIndex="-1">-->
+                                            <!--											<label for="sample2" class="pull-right margin-0">-->
+                                            <!--												<i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>-->
+                                            <!--											</label>-->
+                                            <!--											<label for="sample2" class="mdl-textfield__label">Gender</label>-->
+                                            <!--											<ul data-mdl-for="sample2"-->
+                                            <!--												class="mdl-menu mdl-menu&#45;&#45;bottom-left mdl-js-menu">-->
+                                            <!--												<li class="mdl-menu__item" data-val="DE">Male</li>-->
+                                            <!--												<li class="mdl-menu__item" data-val="BY">Female</li>-->
+                                            <!--											</ul>-->
+                                            <label for="list2" class="mdl-textfield__label">Gender</label>
+                                            <select class="mdl-textfield__input" id="sample2" name="Gender">
+                                                {% if student.Class == 'Male' %}
+                                                <option value="Male" class="mdl-menu_item" selected="selected">Male
+                                                </option>
+                                                <option value="Female" class="mdl-menu_item">Female
+                                                </option>
+                                                {% else %}
+                                                <option value="Female" class="mdl-menu_item" selected="selected">
+                                                    Female
+                                                </option>
+                                                <option value="Male" class="mdl-menu_item">Male
+                                                </option>
+                                                {% endif %}
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 p-t-20">
+                                        <div
+                                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                            <input class="mdl-textfield__input" type="text" value="{{student.MobileNo}}"
+                                                   name="MobileNumber"
+                                                   pattern="-?[0-9]*(\.[0-9]+)?" id="text5">
+                                            <label class="mdl-textfield__label" for="text5">Mobile Number</label>
+                                            <span class="mdl-textfield__error">Number required!</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 p-t-20">
+                                        <div
+                                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                            <input class="mdl-textfield__input" type="text"
+                                                   value="{{student.ParentsName}}" name="ParentName"
+                                                   id="txtParentName">
+                                            <label class="mdl-textfield__label">Parents Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 p-t-20">
+                                        <div
+                                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                            <input class="mdl-textfield__input" type="text"
+                                                   value="{{student.ParentMobileNo}}" name="ParentNumber"
+                                                   pattern="-?[0-9]*(\.[0-9]+)?" id="txtPNo">
+                                            <label class="mdl-textfield__label" for="txtPNo">Parents Mobile
+                                                Number</label>
+                                            <span class="mdl-textfield__error">Number required!</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 p-t-20">
+                                        <div
+                                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                            <input class="mdl-textfield__input" type="text"
+                                                   value="{{student.BirthDate}}" name="DOB"
+                                                   id="dateOfBirth">
+                                            <label class="mdl-textfield__label">Birth Date</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 p-t-20">
+                                        <div
+                                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                            <input class="mdl-textfield__input" type="text"
+                                                   value="{{student.BloodGroup}}" name="BloodGroup"
+                                                   id="txtBloodGroup">
+                                            <label class="mdl-textfield__label">Blood Group</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 p-t-20">
+                                        <div class="mdl-textfield mdl-js-textfield txt-full-width">
+											<textarea class="mdl-textfield__input" rows="4" name="Address"
+                                                      id="text7">{{student.Address}}</textarea>
+                                            <label class="mdl-textfield__label" for="text7">Address</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 p-t-20">
+                                        <label class="control-label col-md-3">Upload Photo
+                                        </label>
+                                        <div class="col-md-12">
+                                            <div id="id_dropzone" class="dropzone"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 p-t-20 text-center">
+                                        <button type="submit"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink">
+                                            Submit
+                                        </button>
+                                        <button type="button"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-default">
+                                            Cancel
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end page content -->
+        <!-- start chat sidebar -->
+        <div class="chat-sidebar-container" data-close-on-body-click="false">
+            <div class="chat-sidebar">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a href="#quick_sidebar_tab_1" class="nav-link active tab-icon" data-toggle="tab"> <i
+                                class="material-icons">chat</i>Chat
+                            <span class="badge badge-danger">4</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#quick_sidebar_tab_3" class="nav-link tab-icon" data-toggle="tab"> <i
+                                class="material-icons">settings</i>
+                            Settings
+                        </a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <!-- Start User Chat -->
+                    <div class="tab-pane active chat-sidebar-chat in active show" role="tabpanel"
+                         id="quick_sidebar_tab_1">
+                        <div class="chat-sidebar-list">
+                            <div class="chat-sidebar-chat-users slimscroll-style" data-rail-color="#ddd"
+                                 data-wrapper-class="chat-sidebar-list">
+                                <div class="chat-header">
+                                    <h5 class="list-heading">Online</h5>
+                                </div>
+                                <ul class="media-list list-items">
+                                    <li class="media"><img class="media-object" src="../assets/img/prof/prof3.jpg"
+                                                           width="35" height="35" alt="...">
+                                        <i class="online dot"></i>
+                                        <div class="media-body">
+                                            <h5 class="media-heading">John Deo</h5>
+                                            <div class="media-heading-sub">Spine Surgeon</div>
+                                        </div>
+                                    </li>
+                                    <li class="media">
+                                        <div class="media-status">
+                                            <span class="badge badge-success">5</span>
+                                        </div>
+                                        <img class="media-object" src="../assets/img/prof/prof1.jpg"
+                                             width="35" height="35" alt="...">
+                                        <i class="busy dot"></i>
+                                        <div class="media-body">
+                                            <h5 class="media-heading">Rajesh</h5>
+                                            <div class="media-heading-sub">Director</div>
+                                        </div>
+                                    </li>
+                                    <li class="media"><img class="media-object" src="../assets/img/prof/prof5.jpg"
+                                                           width="35" height="35" alt="...">
+                                        <i class="away dot"></i>
+                                        <div class="media-body">
+                                            <h5 class="media-heading">Jacob Ryan</h5>
+                                            <div class="media-heading-sub">Ortho Surgeon</div>
+                                        </div>
+                                    </li>
+                                    <li class="media">
+                                        <div class="media-status">
+                                            <span class="badge badge-danger">8</span>
+                                        </div>
+                                        <img class="media-object" src="../assets/img/prof/prof4.jpg"
+                                             width="35" height="35" alt="...">
+                                        <i class="online dot"></i>
+                                        <div class="media-body">
+                                            <h5 class="media-heading">Kehn Anderson</h5>
+                                            <div class="media-heading-sub">CEO</div>
+                                        </div>
+                                    </li>
+                                    <li class="media"><img class="media-object" src="../assets/img/prof/prof2.jpg"
+                                                           width="35" height="35" alt="...">
+                                        <i class="busy dot"></i>
+                                        <div class="media-body">
+                                            <h5 class="media-heading">Sarah Smith</h5>
+                                            <div class="media-heading-sub">Anaesthetics</div>
+                                        </div>
+                                    </li>
+                                    <li class="media"><img class="media-object" src="../assets/img/prof/prof7.jpg"
+                                                           width="35" height="35" alt="...">
+                                        <i class="online dot"></i>
+                                        <div class="media-body">
+                                            <h5 class="media-heading">Vlad Cardella</h5>
+                                            <div class="media-heading-sub">Cardiologist</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="chat-header">
+                                    <h5 class="list-heading">Offline</h5>
+                                </div>
+                                <ul class="media-list list-items">
+                                    <li class="media">
+                                        <div class="media-status">
+                                            <span class="badge badge-warning">4</span>
+                                        </div>
+                                        <img class="media-object" src="../assets/img/prof/prof6.jpg"
+                                             width="35" height="35" alt="...">
+                                        <i class="offline dot"></i>
+                                        <div class="media-body">
+                                            <h5 class="media-heading">Jennifer Maklen</h5>
+                                            <div class="media-heading-sub">Nurse</div>
+                                            <div class="media-heading-small">Last seen 01:20 AM</div>
+                                        </div>
+                                    </li>
+                                    <li class="media"><img class="media-object" src="../assets/img/prof/prof8.jpg"
+                                                           width="35" height="35" alt="...">
+                                        <i class="offline dot"></i>
+                                        <div class="media-body">
+                                            <h5 class="media-heading">Lina Smith</h5>
+                                            <div class="media-heading-sub">Ortho Surgeon</div>
+                                            <div class="media-heading-small">Last seen 11:14 PM</div>
+                                        </div>
+                                    </li>
+                                    <li class="media">
+                                        <div class="media-status">
+                                            <span class="badge badge-success">9</span>
+                                        </div>
+                                        <img class="media-object" src="../assets/img/prof/prof9.jpg"
+                                             width="35" height="35" alt="...">
+                                        <i class="offline dot"></i>
+                                        <div class="media-body">
+                                            <h5 class="media-heading">Jeff Adam</h5>
+                                            <div class="media-heading-sub">Compounder</div>
+                                            <div class="media-heading-small">Last seen 3:31 PM</div>
+                                        </div>
+                                    </li>
+                                    <li class="media"><img class="media-object" src="../assets/img/prof/prof10.jpg"
+                                                           width="35" height="35" alt="...">
+                                        <i class="offline dot"></i>
+                                        <div class="media-body">
+                                            <h5 class="media-heading">Anjelina Cardella</h5>
+                                            <div class="media-heading-sub">Physiotherapist</div>
+                                            <div class="media-heading-small">Last seen 7:45 PM</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End User Chat -->
+                    <!-- Start Setting Panel -->
+                    <div class="tab-pane chat-sidebar-settings" role="tabpanel" id="quick_sidebar_tab_3">
+                        <div class="chat-sidebar-settings-list slimscroll-style">
+                            <div class="chat-header">
+                                <h5 class="list-heading">Layout Settings</h5>
+                            </div>
+                            <div class="chatpane inner-content ">
+                                <div class="settings-list">
+                                    <div class="setting-item">
+                                        <div class="setting-text">Sidebar Position</div>
+                                        <div class="setting-set">
+                                            <select
+                                                    class="sidebar-pos-option form-control input-inline input-sm input-small ">
+                                                <option value="left" selected="selected">Left</option>
+                                                <option value="right">Right</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="setting-item">
+                                        <div class="setting-text">Header</div>
+                                        <div class="setting-set">
+                                            <select
+                                                    class="page-header-option form-control input-inline input-sm input-small ">
+                                                <option value="fixed" selected="selected">Fixed</option>
+                                                <option value="default">Default</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="setting-item">
+                                        <div class="setting-text">Footer</div>
+                                        <div class="setting-set">
+                                            <select
+                                                    class="page-footer-option form-control input-inline input-sm input-small ">
+                                                <option value="fixed">Fixed</option>
+                                                <option value="default" selected="selected">Default</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chat-header">
+                                    <h5 class="list-heading">Account Settings</h5>
+                                </div>
+                                <div class="settings-list">
+                                    <div class="setting-item">
+                                        <div class="setting-text">Notifications</div>
+                                        <div class="setting-set">
+                                            <div class="switch">
+                                                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect"
+                                                       for="switch-1">
+                                                    <input type="checkbox" id="switch-1" class="mdl-switch__input"
+                                                           checked>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="setting-item">
+                                        <div class="setting-text">Show Online</div>
+                                        <div class="setting-set">
+                                            <div class="switch">
+                                                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect"
+                                                       for="switch-7">
+                                                    <input type="checkbox" id="switch-7" class="mdl-switch__input"
+                                                           checked>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="setting-item">
+                                        <div class="setting-text">Status</div>
+                                        <div class="setting-set">
+                                            <div class="switch">
+                                                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect"
+                                                       for="switch-2">
+                                                    <input type="checkbox" id="switch-2" class="mdl-switch__input"
+                                                           checked>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="setting-item">
+                                        <div class="setting-text">2 Steps Verification</div>
+                                        <div class="setting-set">
+                                            <div class="switch">
+                                                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect"
+                                                       for="switch-3">
+                                                    <input type="checkbox" id="switch-3" class="mdl-switch__input"
+                                                           checked>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chat-header">
+                                    <h5 class="list-heading">General Settings</h5>
+                                </div>
+                                <div class="settings-list">
+                                    <div class="setting-item">
+                                        <div class="setting-text">Location</div>
+                                        <div class="setting-set">
+                                            <div class="switch">
+                                                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect"
+                                                       for="switch-4">
+                                                    <input type="checkbox" id="switch-4" class="mdl-switch__input"
+                                                           checked>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="setting-item">
+                                        <div class="setting-text">Save Histry</div>
+                                        <div class="setting-set">
+                                            <div class="switch">
+                                                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect"
+                                                       for="switch-5">
+                                                    <input type="checkbox" id="switch-5" class="mdl-switch__input"
+                                                           checked>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="setting-item">
+                                        <div class="setting-text">Auto Updates</div>
+                                        <div class="setting-set">
+                                            <div class="switch">
+                                                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect"
+                                                       for="switch-6">
+                                                    <input type="checkbox" id="switch-6" class="mdl-switch__input"
+                                                           checked>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end chat sidebar -->
+    </div>
+    <!-- end page container -->
+    <!-- start footer -->
+    <div class="page-footer">
+        <div class="page-footer-inner"> 2017 &copy; Smart University Theme By
+            <a href="mailto:redstartheme@gmail.com" target="_top" class="makerCss">Redstar Theme</a>
+        </div>
+        <div class="scroll-to-top">
+            <i class="icon-arrow-up"></i>
+        </div>
+    </div>
+    <!-- end footer -->
+</div>
+<!-- start js include path -->
+<script src="{% static 'admin_css/plugins/jquery/jquery.min.js'%}"></script>
+<script src="{% static 'admin_css/plugins/popper/popper.js'%}"></script>
+<script src="{% static 'admin_css/plugins/jquery-blockui/jquery.blockui.min.js'%}"></script>
+<script src="{% static 'admin_css/plugins/jquery-slimscroll/jquery.slimscroll.js'%}"></script>
+<!-- bootstrap -->
+<script src="{% static 'admin_css/plugins/bootstrap/js/bootstrap.min.js'%}"></script>
+<!-- Common js-->
+<script src="{% static 'admin_css/js/app.js'%}"></script>
+<script src="{% static 'admin_css/js/layout.js'%}"></script>
+<script src="{% static 'admin_css/js/color.js'%}"></script>
+<!-- Material -->
+<script src="{% static 'admin_css/plugins/material/material.min.js'%}"></script>
+<!--	<script src="../assets/js/pages/material-select/getmdl-select.js"></script>-->
+<!--	<script src="../assets/plugins/material-datetimepicker/moment-with-locales.min.js"></script>-->
+<!--	<script src="../assets/plugins/material-datetimepicker/bootstrap-material-datetimepicker.js"></script>-->
+<!--	<script src="../assets/plugins/material-datetimepicker/datetimepicker.js"></script>-->
+<!-- dropzone -->
+<!--	<script src="../assets/plugins/dropzone/dropzone.js"></script>-->
+<!--	<script src="../assets/plugins/dropzone/dropzone-call.js"></script>-->
+<!-- end js include path -->
+</body>
+
+</html>
